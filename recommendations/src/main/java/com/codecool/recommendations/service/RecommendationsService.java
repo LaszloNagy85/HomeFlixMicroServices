@@ -18,4 +18,8 @@ public class RecommendationsService {
         List <RecommendationEntity> result = recommendationsRepository.findAllByVideoId(videoId);
         return result == null? new ArrayList<>() : result;
     }
+
+    public void saveNewRecommendation(RecommendationEntity recommendationEntity) {
+        recommendationsRepository.save(recommendationEntity);
+    }
 }

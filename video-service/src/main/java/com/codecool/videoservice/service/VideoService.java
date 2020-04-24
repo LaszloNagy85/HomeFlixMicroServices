@@ -29,4 +29,8 @@ public class VideoService {
         videoEntity.ifPresent(entity -> entity.setRecommendations(recommendationsServiceCaller.getRecommendationsForVideo(videoId)));
         return videoEntity.orElse(VideoEntity.builder().name("No Video Recorder with this ID yet").build());
     }
+
+    public void saveNewRecommendation(VideoRecommendations videoRecommendation) {
+        recommendationsServiceCaller.saveNewRecommendation(videoRecommendation);
+    }
 }
