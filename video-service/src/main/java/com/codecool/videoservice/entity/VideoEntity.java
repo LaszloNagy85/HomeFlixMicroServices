@@ -1,14 +1,13 @@
 package com.codecool.videoservice.entity;
 
+import com.codecool.videoservice.model.VideoRecommendations;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -26,5 +25,8 @@ public class VideoEntity {
 
     @Column(nullable = false)
     private String url;
+
+    @Transient
+    private List<VideoRecommendations> recommendations;
 
 }
