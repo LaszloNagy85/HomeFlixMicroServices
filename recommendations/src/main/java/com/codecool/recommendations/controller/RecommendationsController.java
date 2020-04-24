@@ -23,4 +23,9 @@ public class RecommendationsController {
     public void saveNewRecommendation(@Valid @RequestBody RecommendationEntity recommendationEntity) {
         recommendationsService.saveNewRecommendation(recommendationEntity);
     }
+
+    @PutMapping("/update")
+    public void updateRecommendation(@Valid @RequestBody RecommendationEntity recommendationEntity) {
+        recommendationsService.updateRecommendation(recommendationEntity);
+    }
 }

@@ -37,4 +37,8 @@ public class RecommendationsServiceCaller {
     protected void saveNewRecommendation(VideoRecommendations videoRecommendation) {
         restTemplate.postForEntity(baseUrl + "/save", videoRecommendation, VideoRecommendations.class);
     }
+
+    protected void updateRecommendation(VideoRecommendations videoRecommendation) {
+        restTemplate.put(baseUrl + "/update", videoRecommendation, VideoRecommendations.class);
+    }
 }

@@ -22,4 +22,11 @@ public class RecommendationsService {
     public void saveNewRecommendation(RecommendationEntity recommendationEntity) {
         recommendationsRepository.save(recommendationEntity);
     }
+
+    public void updateRecommendation(RecommendationEntity recommendationEntity) {
+        recommendationsRepository.updateRecommendation(
+                recommendationEntity.getId(),
+                recommendationEntity.getRating(),
+                recommendationEntity.getComment());
+    }
 }

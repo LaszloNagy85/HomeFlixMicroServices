@@ -30,7 +30,13 @@ public class VideoService {
         return videoEntity.orElse(VideoEntity.builder().name("No Video Recorder with this ID yet").build());
     }
 
+
+
     public void saveNewRecommendation(VideoRecommendations videoRecommendation) {
         recommendationsServiceCaller.saveNewRecommendation(videoRecommendation);
+    }
+
+    public void updateRecommendation(VideoRecommendations videoRecommendation) {
+        recommendationsServiceCaller.updateRecommendation(videoRecommendation);
     }
 }

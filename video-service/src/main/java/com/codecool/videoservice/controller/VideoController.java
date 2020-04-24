@@ -29,9 +29,17 @@ public class VideoController {
         return videoService.getVideoByIdWithRecommendations(videoId);
     }
 
+
+
     @PostMapping("/save-new-recommendation")
     @ApiOperation("Saving a new recommendation!")
     public void saveNewRecommendation(@Valid @RequestBody VideoRecommendations videoRecommendation) {
         videoService.saveNewRecommendation(videoRecommendation);
+    }
+
+    @PutMapping("/update-recommendation")
+    @ApiOperation("Updating an existing recommendation!")
+    public void updateRecommendation(@Valid @RequestBody VideoRecommendations videoRecommendation) {
+        videoService.updateRecommendation(videoRecommendation);
     }
 }
