@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface RecommendationsRepository extends JpaRepository<RecommendationEntity, Long> {
 
-    List<RecommendationEntity> findAllByVideoId(Long videoId);
+    List<RecommendationEntity> findAllByVideoIdOrderByCreationDateDesc(Long videoId);
 
     @Transactional
     @Modifying

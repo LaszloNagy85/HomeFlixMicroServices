@@ -3,6 +3,8 @@ package com.codecool.videoservice.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 public class VideoRecommendations {
@@ -10,4 +12,5 @@ public class VideoRecommendations {
     private long rating;
     private String comment;
     private long videoId;
+    private LocalDate creationDate;
 }

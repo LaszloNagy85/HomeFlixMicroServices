@@ -29,7 +29,11 @@ public class VideoController {
         return videoService.getVideoByIdWithRecommendations(videoId);
     }
 
-
+    @PutMapping("/video/update")
+    @ApiOperation(value = "Update details of an existing video.")
+    public void updateVideo(@Valid @RequestBody VideoEntity videoEntity) {
+        videoService.updateVideo(videoEntity);
+    }
 
     @PostMapping("/save-new-recommendation")
     @ApiOperation("Saving a new recommendation!")

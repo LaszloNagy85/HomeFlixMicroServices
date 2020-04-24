@@ -30,6 +30,12 @@ public class VideoService {
         return videoEntity.orElse(VideoEntity.builder().name("No Video Recorder with this ID yet").build());
     }
 
+    public void updateVideo(VideoEntity videoEntity) {
+        videoRepository.updateVideo(
+                videoEntity.getId(),
+                videoEntity.getName(),
+                videoEntity.getUrl());
+    }
 
 
     public void saveNewRecommendation(VideoRecommendations videoRecommendation) {
@@ -39,4 +45,5 @@ public class VideoService {
     public void updateRecommendation(VideoRecommendations videoRecommendation) {
         recommendationsServiceCaller.updateRecommendation(videoRecommendation);
     }
+
 }

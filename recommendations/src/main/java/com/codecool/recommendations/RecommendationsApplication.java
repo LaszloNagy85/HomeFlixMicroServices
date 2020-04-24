@@ -14,6 +14,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @SpringBootApplication
@@ -43,30 +44,35 @@ public class RecommendationsApplication {
 				.rating(5)
 				.comment("Best series ever!!!")
 				.videoId(1)
+				.creationDate(LocalDateTime.now())
 				.build();
 
 		RecommendationEntity rec2 = RecommendationEntity.builder()
 				.rating(5)
 				.comment("Best animated series ever!!!")
 				.videoId(2)
+				.creationDate(LocalDateTime.now())
 				.build();
 
 		RecommendationEntity rec3 = RecommendationEntity.builder()
 				.rating(5)
 				.comment("My all time favourite one!!!")
 				.videoId(1)
+				.creationDate(LocalDateTime.now())
 				.build();
 
 		RecommendationEntity rec4 = RecommendationEntity.builder()
 				.rating(5)
 				.comment("Best fun/retro series ever made! Love it!!")
 				.videoId(4)
+				.creationDate(LocalDateTime.now())
 				.build();
 
 		RecommendationEntity rec5 = RecommendationEntity.builder()
 				.rating(4)
 				.comment("Not bad, bit slow start.")
 				.videoId(3)
+				.creationDate(LocalDateTime.now())
 				.build();
 
 		recommendationsRepository.saveAll(Arrays.asList(rec1, rec2, rec3, rec4, rec5));
